@@ -2,6 +2,12 @@ const data = {
   labels: ["January", "February", "March", "April"],
   datasets: [
     {
+      label: "Something",
+      data: [7, 8, 9, 10],
+      backgroundColor: "black",
+      stack: "1",
+    },
+    {
       label: "Admin",
       data: [1, 2, 3, 4],
       backgroundColor: "red",

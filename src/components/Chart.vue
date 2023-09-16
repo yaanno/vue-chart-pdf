@@ -26,13 +26,13 @@ const chart = ref<HTMLCanvasElement>();
 const doc = new jsPDF("p", "px");
 const savePdf = () => {
   doc.addImage({
-    imageData: chart.value?.toDataURL(),
+    imageData: chart.value?.toDataURL()!,
     x: 20,
     y: 20,
     width: doc.internal.pageSize.getWidth() - 40,
-    height: doc.internal.pageSize.getHeight() / 2,
+    height: doc.internal.pageSize.getHeight() / 3,
   });
-  doc.save();
+  doc.save(new Date().getTime().toString());
 };
 
 onMounted(() => {
