@@ -24,6 +24,11 @@ const data = {
   labels: labels,
   datasets: [
     {
+      label: "Total",
+      data: [81, 63, 36],
+      backgroundColor: "black",
+    },
+    {
       label: "Admin",
       data: [40, 20, 12],
       backgroundColor: "red",
