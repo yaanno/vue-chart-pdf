@@ -18,33 +18,32 @@ ChartJS.register(
   CategoryScale,
   LinearScale
 );
-const labels = ["January", "February", "March"];
+const labels = ["January", "February", "March", "April"];
 
 const data = {
   labels: labels,
   datasets: [
     {
-      label: "Total",
-      data: [81, 63, 36],
-      backgroundColor: "black",
-    },
-    {
       label: "Admin",
-      data: [40, 20, 12],
+      data: [1, 2, 3, 4],
       backgroundColor: "red",
+      stack: "2",
     },
     {
       label: "Constructor",
-      data: [1, 23, 12],
+      data: [4, 5, 6, 7],
       backgroundColor: "blue",
+      stack: "2",
     },
     {
       label: "Other",
-      data: [40, 28, 1],
+      data: [7, 8, 9, 8],
       backgroundColor: "green",
+      stack: "2",
     },
   ],
   options: {
+    grouped: true,
     responsive: true,
     scales: {
       x: {
