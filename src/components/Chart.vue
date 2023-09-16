@@ -9,6 +9,7 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
+import { onMounted, ref } from "vue";
 
 ChartJS.register(
   Title,
@@ -18,6 +19,9 @@ ChartJS.register(
   CategoryScale,
   LinearScale
 );
+
+const chart = ref<HTMLCanvasElement>();
+
 const labels = ["January", "February", "March", "April"];
 
 const data = {
@@ -55,10 +59,15 @@ const data = {
     },
   },
 };
+onMounted(() => {
+  chart.value =
+    (document.getElementById("chart") as HTMLCanvasElement) ?? undefined;
+  console.log(chart?.value?.toDataURL());
+});
 </script>
 
 <template>
-  <Bar id="my-chart-id" :data="data" />
+  <Bar id="chart" :data="data" />
 </template>
 
 <style scoped>
